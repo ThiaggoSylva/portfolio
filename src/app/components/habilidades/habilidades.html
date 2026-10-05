@@ -1,0 +1,17 @@
+<section class="secao" id="habilidades" aria-labelledby="habilidades-titulo">
+  <div class="container">
+    <h2 class="secao__titulo" id="habilidades-titulo">Habilidades</h2>
+    <div class="row g-5 habilidades__grade">
+      @for (grupo of grupos; track grupo.titulo) {
+        <div class="col-md-6 col-xl-4">
+          <h3 class="habilidades__grupo">{{ grupo.titulo }}</h3>
+          <ul class="habilidades__lista">
+            @for (item of grupo.itens; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--altura-topo);
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--cor-linha);
+}
+
+.topo__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1rem;
+}
+
+.topo__marca {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+}
+
+.topo__lista {
+  display: flex;
+  gap: clamp(0.875rem, 3vw, 2rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topo__link {
+  font-size: 0.9375rem;
+  color: var(--cor-suave);
+  transition: color 0.15s;
+
+  &:hover {
+    color: var(--cor-destaque);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .topo__marca {
+    display: none;
+  }
+
+  .topo__barra {
+    justify-content: center;
+  }
+}

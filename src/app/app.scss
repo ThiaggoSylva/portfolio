@@ -1,0 +1,15 @@
+.pular-conteudo {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  padding: 0.5rem 1rem;
+  background: var(--cor-destaque);
+  color: #000;
+  font-weight: 600;
+  transition: top 0.15s;
+
+  &:focus {
+    top: 0.75rem;
+  }
+}

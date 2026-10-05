@@ -1,0 +1,24 @@
+<section class="hero" id="inicio" aria-labelledby="hero-titulo">
+  <div class="container hero__grade">
+    <div class="hero__texto">
+      <h1 class="hero__nome" id="hero-titulo">
+        <span>Thiago</span>
+        <span>de Lima</span>
+        <span>Silva</span>
+      </h1>
+      <p class="hero__cargo">{{ perfil.cargo }}</p>
+      <p class="hero__digitando" aria-hidden="true">
+        <span>{{ textoDigitado() }}</span><span class="hero__cursor"></span>
+      </p>
+      <p class="visually-hidden">{{ perfil.frases.join('. ') }}</p>
+      <p class="hero__resumo">{{ perfil.resumo }}</p>
+      <div class="hero__acoes">
+        <a class="botao botao--cheio" href="#projetos">Ver projetos</a>
+        <a class="botao" [href]="perfil.links[0].url" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+    <figure class="hero__foto">
+      <img [src]="perfil.foto.src" [alt]="perfil.foto.alt" width="800" height="800" fetchpriority="high" />
+    </figure>
+  </div>
+</section>

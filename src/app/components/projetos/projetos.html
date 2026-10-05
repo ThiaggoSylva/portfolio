@@ -1,0 +1,32 @@
+<section class="secao" id="projetos" aria-labelledby="projetos-titulo">
+  <div class="container">
+    <h2 class="secao__titulo" id="projetos-titulo">Projetos</h2>
+    <ul class="projetos__lista">
+      @for (projeto of projetos; track projeto.titulo) {
+        <li class="projeto" [class.projeto--com-link]="projeto.repositorio">
+          <div class="projeto__principal">
+            <h3 class="projeto__titulo">
+              @if (projeto.repositorio) {
+                <a [href]="projeto.repositorio" target="_blank" rel="noopener noreferrer">
+                  {{ projeto.titulo }}<span class="visually-hidden"> (abre o repositório no GitHub)</span>
+                </a>
+              } @else {
+                {{ projeto.titulo }}
+              }
+            </h3>
+            <p class="projeto__descricao">{{ projeto.descricao }}</p>
+            @if (projeto.destaque) {
+              <p class="projeto__destaque">{{ projeto.destaque }}</p>
+            }
+          </div>
+          <div class="projeto__lateral">
+            <p class="projeto__stack">{{ projeto.stack.join(', ') }}</p>
+            @if (projeto.contexto) {
+              <p class="projeto__contexto">{{ projeto.contexto }}</p>
+            }
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

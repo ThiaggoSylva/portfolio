@@ -1,0 +1,12 @@
+<header class="topo">
+  <div class="container topo__barra">
+    <a class="topo__marca" href="#inicio">Thiago Silva</a>
+    <nav aria-label="Principal">
+      <ul class="topo__lista">
+        @for (item of itens; track item.id) {
+          <li><a class="topo__link" [href]="'#' + item.id">{{ item.rotulo }}</a></li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

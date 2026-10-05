@@ -1,0 +1,112 @@
+.hero {
+  padding-block: clamp(2rem, 6vw, 5rem) clamp(3rem, 8vw, 6rem);
+  overflow: hidden;
+}
+
+.hero__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+}
+
+.hero__texto {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__nome {
+  margin: 0 0 1.5rem;
+  font-size: clamp(3.25rem, 10.5vw, 8.5rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+
+  span {
+    display: block;
+  }
+}
+
+.hero__cargo {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+}
+
+.hero__digitando {
+  min-height: 1.75em;
+  margin: 0 0 1.5rem;
+  font-family: var(--fonte-codigo);
+  font-size: clamp(0.9rem, 1.6vw, 1.125rem);
+  font-weight: 500;
+  color: var(--cor-destaque);
+}
+
+.hero__cursor {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--cor-destaque);
+  animation: piscar 1s steps(1) infinite;
+}
+
+.hero__resumo {
+  max-width: 34rem;
+  margin: 0 0 2rem;
+  font-size: 1.1875rem;
+  color: var(--cor-suave);
+}
+
+.hero__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero__foto {
+  margin: 0 0 0 -12%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 28%, #000 80%, transparent 100%),
+      linear-gradient(to bottom, #000 0, #000 78%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent 0, #000 28%, #000 80%, transparent 100%),
+      linear-gradient(to bottom, #000 0, #000 78%, transparent 100%);
+    mask-composite: intersect;
+  }
+}
+
+@keyframes piscar {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__cursor {
+    animation: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero__grade {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__foto {
+    order: -1;
+    max-width: 22rem;
+    margin: 0 auto -3rem;
+
+    img {
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22%, #000 78%, transparent 100%),
+        linear-gradient(to bottom, #000 0, #000 70%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0, #000 22%, #000 78%, transparent 100%),
+        linear-gradient(to bottom, #000 0, #000 70%, transparent 100%);
+    }
+  }
+}

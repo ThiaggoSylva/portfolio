@@ -1,0 +1,22 @@
+<section class="secao" id="sobre" aria-labelledby="sobre-titulo">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <h2 class="secao__titulo" id="sobre-titulo">Sobre mim</h2>
+      </div>
+      <div class="col-lg-7">
+        @for (paragrafo of perfil.sobre; track paragrafo) {
+          <p class="sobre__texto">{{ paragrafo }}</p>
+        }
+        <dl class="sobre__ficha">
+          @for (item of perfil.ficha; track item.rotulo) {
+            <div class="sobre__linha">
+              <dt>{{ item.rotulo }}</dt>
+              <dd>{{ item.valor }}</dd>
+            </div>
+          }
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

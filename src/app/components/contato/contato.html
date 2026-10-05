@@ -1,0 +1,17 @@
+<section class="secao" id="contato" aria-labelledby="contato-titulo">
+  <div class="container">
+    <h2 class="secao__titulo" id="contato-titulo">Contato</h2>
+    <p class="contato__texto">Quer conversar sobre uma vaga, um projeto ou uma ideia? Me chame por uma das redes abaixo.</p>
+    <ul class="contato__lista">
+      @for (link of perfil.links; track link.url) {
+        <li>
+          <a class="contato__link" [href]="link.url" target="_blank" rel="noopener noreferrer">
+            <span class="contato__rede">{{ link.rotulo }}</span>
+            <span class="contato__usuario">{{ link.usuario }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+    <p class="contato__rodape">© {{ ano }} {{ perfil.nome }}</p>
+  </div>
+</section>
